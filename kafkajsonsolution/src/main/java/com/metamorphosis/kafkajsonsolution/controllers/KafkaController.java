@@ -1,6 +1,7 @@
 package com.metamorphosis.kafkajsonsolution.controllers;
 
 import com.metamorphosis.kafkajsonsolution.entities.Course;
+import com.metamorphosis.kafkajsonsolution.entities.Prof;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.function.StreamBridge;

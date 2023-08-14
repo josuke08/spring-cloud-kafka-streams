@@ -3,8 +3,25 @@ spring:
     function:
       definition: consumer;producer
     stream:
+      kafka:
+        bindings:
+          producer-out-0:
+            producer:
+              configuration:
+                value.serializer: com.metamorphosis.kafkajsonsolution.serializers.CourseSerializer
+          consumer-in-0:
+            consumer:
+              configuration:
+                value.deserializer: com.metamorphosis.kafkajsonsolution.serializers.CourseDeserializer
+        binder:
+          brokers: localhost:9092
+
       bindings:
         producer-out-0:
           destination: R2
+          producer:
+            useNativeEncoding: true # Enables using the custom serializer
         consumer-in-0:
           destination: R2
+          consumer:
+            use-native-decoding: true # Enables using the custom deserializer
